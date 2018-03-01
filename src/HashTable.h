@@ -88,15 +88,15 @@ bool HashTable<T>::_insertion(const int address, const int key, const T& data)
 }
 
 template<class T>
-T* HashTable<T>::findEntry(const int key)
+T* HashTable<T>::findEntry(const int key)      //why did u make the return type a pointer
 {
     const int address = getAddress(key);
     const int index = _find(address, key);
     
     if (index >= 0)
     {
-        return bucket[address][index].data;
-    }
+        return bucket[address][index].data; //since this is not a pointer i believe, or you mean &bucket[address][index].data
+    } 
     return nullptr;
 }
 
