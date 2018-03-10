@@ -68,7 +68,7 @@ bool LinkedList<T, K>::remove(const K &removalKey)
 {
     ListNode *curr, *prev;
 
-    while (curr && cmp(curr, removalKey) > 0)
+    while (curr && cmp(curr, removalKey) > 0)  //should the first argument not be curr->data? cuz your cmp fucntion takes T and K as parameter
     {
         prev = curr;
         curr = curr->next;
